@@ -10,20 +10,21 @@ router.get("/persons", function(req,res, next){
     });
 })
 
-router.get("/index", function(req,res){
+router.get("/person", function(req,res){
 
-    res.render("index");
+    res.render("person");
 });
 
-router.post("/personssend", async (req, res) => {
+router.post("/personssend",function (req, res) {
 
-    let felipe = new Person ({
-    nombre: "Felipe",
-    edad: 21,
-    tipoSangre: "A+",
-    nss: "e0067849fgt"
+    const myPerson = new Person ({
+    nss: req.body.nss,
+    nombre: req.body.nombre,
+    apellido: req.body.apellido,
+    edad: req.body.edad,
+    tipoSangre: req.body.tipoSangre
     });
-    await felipe.save();
+    myPerson.save();
 })
 
 
