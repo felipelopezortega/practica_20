@@ -1,7 +1,7 @@
 const express = require("express"); //se inyecta la dependencia de express
 const router = express.Router(); // se crea una constante de una propiedad de express, router
 const mongoose = require("../node_modules/mongoose"); // se inyecta la dependencia de mongoose, la base de datos
-let Person = require("../models/person"); //se define una variable "Persobn"
+let Person = require("../models/person"); //se define una variable "Person"
 
 //primer ruta, para mostrarnos el contenido de nuestra base de datos
 router.get("/persons", function(req,res, next){ 
